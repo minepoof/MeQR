@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRW Wallet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0f0;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .balance {
+            font-size: 24px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #transactionHistory {
+            border-top: 1px solid #0f0;
+            padding-top: 20px;
+        }
+        .transaction {
+            background-color: #222;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QRW Wallet</h1>
+        <div id="balances">
+            <p>TechCoin Balance: <span id="techcoinBalance">0</span></p>
+            <p>CarCoin Balance: <span id="carcoinBalance">0</span></p>
+            <p>FoodCoin Balance: <span id="foodcoinBalance">0</span></p>
+            <p>AstraCoin Balance: <span id="astracoinBalance">0</span></p>
+            <p>BioCoin Balance: <span id="biocoinBalance">0</span></p>
+        </div>
+        <div class="actions">
+            <button id="sendBtn">Send</button>
+            <button id="receiveBtn">Receive</button>
+        </div>
+        <div id="transactionHistory">
+            <h2>Transaction History</h2>
+            <!-- Transactions will be inserted here -->
+        </div>
+    </div>
+    <script src="wallet.js"></script>
+</body>
+</html>

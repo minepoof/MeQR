@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeQR - Generate Your Profile QR Code</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>MeQR</h1>
+        <center><p>Generate a QR code for your personalized bio page</p></center>
+    </header>
+
+    <main>
+        <form id="bioForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="profilePicture">Profile Picture:</label>
+                <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+                <div id="profilePicturePreview" class="preview"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="banner">Banner Image:</label>
+                <input type="file" id="banner" name="banner" accept="image/*">
+                <div id="bannerPreview" class="preview"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="aboutMe">About Me:</label>
+                <textarea id="aboutMe" name="aboutMe" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="xmrAddress">XMR Wallet Address:</label>
+                <input type="text" id="xmrAddress" name="xmrAddress">
+            </div>
+
+            <div class="form-group">
+                <label for="btcAddress">BTC Wallet Address:</label>
+                <input type="text" id="btcAddress" name="btcAddress">
+            </div>
+
+            <div class="form-group">
+                <label for="ltcAddress">LTC Wallet Address:</label>
+                <input type="text" id="ltcAddress" name="ltcAddress">
+            </div>
+
+            <div class="form-group">
+                <label for="ethAddress">ETH Wallet Address:</label>
+                <input type="text" id="ethAddress" name="ethAddress">
+            </div>
+
+            <div class="form-group">
+                <label for="qrwAddress">QRW Wallet Address:</label>
+                <input type="text" id="qrwAddress" name="qrwAddress" pattern="QRW[0-9]{15}" required>
+            </div>
+
+            <button type="submit">Generate QR Code</button>
+        </form>
+
+        <div id="qrCodeContainer"></div>
+    </main>
+
+    <footer>
+        <p>© 2024 MeQR. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

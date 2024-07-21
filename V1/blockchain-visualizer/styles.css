@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    display: flex;
+    padding: 2em;
+}
+
+#graph-container {
+    flex: 2;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 600px;
+}
+
+#coin-display {
+    flex: 1;
+    margin-left: 2em;
+}
+
+.coin {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+#techcoin { border-left: 5px solid #007bff; }
+#carcoin { border-left: 5px solid #28a745; }
+#foodcoin { border-left: 5px solid #ffc107; }
+#astracoin { border-left: 5px solid #6f42c1; }
+#biocoin { border-left: 5px solid #20c997; }
+
+.node {
+    fill: #69b3a2;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+.node text {
+    font-size: 10px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRW Wallet Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #wallet-container {
+            text-align: center;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0f0;
+        }
+        button {
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #qr-code {
+            margin-top: 20px;
+        }
+        #access-wallet-container {
+            margin-top: 20px;
+        }
+        #access-wallet-container a {
+            color: #0f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="wallet-container">
+        <h1>QRW Wallet Generator</h1>
+        <button id="generate-wallet">Generate New Wallet</button>
+        <div id="wallet-info"></div>
+        <div id="qr-code"></div>
+        <div id="access-wallet-container"></div>
+    </div>
+    <script>
+        document.getElementById('generate-wallet').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/generate-wallet', { method: 'POST' });
+                const data = await response.json();
+                document.getElementById('wallet-info').innerHTML = `
+                    <p>Your QRW Address: ${data.address}</p>
+                `;
+                document.getElementById('qr-code').innerHTML = `
+                    <img src="${data.qrCode}" alt="Wallet QR Code">
+                `;
+                
+                // Add the Access Wallet link after successful generation
+                document.getElementById('access-wallet-container').innerHTML = `
+                    <a href="/wallet.html">Access Wallet</a>
+                `;
+            } catch (error) {
+                console.error('Error generating wallet:', error);
+            }
+        });
+    </script>
+</body>
+</html>
